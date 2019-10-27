@@ -15,79 +15,7 @@ Verificar a través de una simulación que efectivamente la media teórica estim
 ## Entregables
 
 ### 1. Código fuente del simulador construido:
-### [1.1 Código fuente online](https://colab.research.google.com/drive/1-onef1pg1dCJ-EcmNn9h3BNJ6pqV_Ynm):
-
-``` ejemplo: ./punto5.py```
-```
-import numpy as np
-import matplotlib.pyplot as plt
-import time
-
-def partition(arr, low, high):
-    count = 0
-    i = (low - 1)  # índice de elemento más pequeño
-    pivot = arr[high]  # pivote
-
-    for j in range(low, high):
-        count += 1
-        # Si el elemento actual es más pequeño que el pivote
-        if arr[j] < pivot:
-            # índice de incremento del elemento más pequeño
-            i = i + 1
-            arr[i], arr[j] = arr[j], arr[i]
-    arr[i + 1], arr[high] = arr[high], arr[i + 1]
-    return i + 1, count
-
-def quickSort(arr, low, high):
-    count = 0
-    if low < high:
-        # pi es el índice de partición, arr [p] es ahora
-        # en el lugar correcto
-        pi, count = partition(arr, low, high)
-
-        # Separar elementos por separado antes
-        # partición y después de la partición
-        count += quickSort(arr, low, pi - 1)
-        count += quickSort(arr, pi + 1, high)
-    return count #devuelve las comparaciones hechas
-
-
-# hacer que funcione de arreglos de tamaño 1 a n
-# por ahora funciona con un tamaño n fijo
-def testing(size, tries):
-    comparisons = []
-    results = []
-    for i in range(tries):
-        sample = np.random.randint(0, size, size) #genera un arreglo de tamaño size y numero maximo size
-        results.append(quickSort(sample, 0, size - 1)) # acá guarda las cantidades de comparaciones en un arreglo
-    comparisons.append(np.average(results)) # acá les saca promedio y las guarda en un arreglo
-    return comparisons
-
-
-if __name__ == '__main__': 
-
-    n=int(input("Ingrese la cantidad de datos a ordenar: \n"))
-    rounds = int(input("Ingrese la cantidad de repeticiones: \n"))
-    vector = list(range(0,n))
-    vector1 = list(range(0, n))
-    for i in range(n):
-        vector[i]=testing(i, rounds)
-    
-    print("Puntos reales")
-    print(vector)
-    plt.plot(vector1, vector, 'ro')
-    x = np.arange(1, n, 0.1)
-    y = 2 * x * np.log(x)
-    plt.plot(x, y)
-    plt.xlabel('X: N° de datos')
-    plt.ylabel('Y: N° de comparaciones')
-    plt.grid(True)
-    plt.legend(('Valor Real', ' Valor Teorico'),
-           loc='lower right')
-    plt.title('Comparación de QuickSort')
-    plt.show()
-
-```
+### [1.1 Código fuente online](https://colab.research.google.com/drive/1-onef1pg1dCJ-EcmNn9h3BNJ6pqV_Ynm)
 
 
 ### 2. Manual técnico:
@@ -130,6 +58,14 @@ Google Colab es un servicio en la nube que permite hacer uso de las GPUs y TPUs 
 
 
 ## 3. Análisis de resultados.
+Las implementaciones de QuickSort varían dependiendo de como se escoja el pivote debido a que la mayoría de optimizaciones que se aplican al algoritmo se centran en la elección del pivote por lo cual la complejidad pueden variar de **O(n²)**. a **O(n·log n)**.
 
-Haciendo un análisis a la gráfica podemos observar que el numero de comparaciones mostradas por los valores reales en comparación con las teóricas en la mayoría de casos dan por debajo de esta linea .
+Haciendo un análisis a la gráfica podemos observar que el numero de comparaciones mostradas reales son menores que las teóricas, aunque esto puede darse debido a que al momento de ejecutar esta gráfica teórica toma un escenario poco probable donde el numero de comparaciones es mas alto que el promedio.
 
+![m6](/img/m6.jpg )
+
+Si repetimos la prueba con 20 muestras por numero de datos **n** a organizar vemos como los datos tienden a tener un comportamiento similar a el de la gráfica teórica pero por debajo de esta.
+
+![m7](/img/m7.jpg )
+
+Donde se puede concluir que el valor teórico es mas alto que el valor real debido a que toma el mayor numero de comparaciones posibles al promedio que generalmente se genera.
