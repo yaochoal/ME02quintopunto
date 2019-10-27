@@ -28,7 +28,7 @@ Python 3.x
 #### Colab Google:
 Google Colab es un servicio en la nube que permite hacer uso de las GPUs y TPUs de google con con librerías como: **Scikit-learn**, **PyTorch**, **TensorFlow**, **Keras** y **OpenCV**. Todo ello con bajo Python 2.x y 3.x muy utilizado para practicar y desarrollar aplicaciones (pilotos) de **machine learning** y **deep learning**, sin tener que invertir en recursos hardware o del Cloud permitiendo también compartir, importar y exportar códigos que tengamos creados por medio de Drive en Google.
 ### Correr el código
-- Pre-requisito: Haber iniciado sección con una cuenta de Google.
+-	Prerrequisito: Haber iniciado sección con una cuenta de Google.
 - Para correr el código primero debemos dar clic en el siguiente enlace.
 ### [ Código fuente en Colab](https://colab.research.google.com/drive/1-onef1pg1dCJ-EcmNn9h3BNJ6pqV_Ynm)
 - Luego dar clic en la opción de arriba izquierda **Abrir en modo ensayo**.
@@ -48,7 +48,7 @@ Google Colab es un servicio en la nube que permite hacer uso de las GPUs y TPUs 
 
 ![m4](/img/m4.jpg )
 
-- Ingrese el numero de muestras por **n** datos.
+- Ingrese el número de muestras por **n** datos.
 
 ![m5](/img/m5.jpg )
 
@@ -58,13 +58,13 @@ Google Colab es un servicio en la nube que permite hacer uso de las GPUs y TPUs 
 
 
 ## 3. Análisis de resultados.
-Las implementaciones de QuickSort varían dependiendo de como se escoja el pivote debido a que la mayoría de optimizaciones que se aplican al algoritmo se centran en la elección del pivote por lo cual la complejidad pueden variar de **O(n²)**(peor caso). a **O(n·log n)**(mejor caso y caso promedio).
+Las implementaciones de QuickSort varían dependiendo de cómo se escoja el pivote debido a que la mayoría de optimizaciones que se aplican al algoritmo se centran en la elección del pivote por lo cual la complejidad pueden variar de **O(n²)**(peor caso). a **O(n·log n)**(mejor caso y caso promedio).
 
-Haciendo un análisis a la gráfica podemos observar que el numero de comparaciones mostradas reales son menores que las teóricas, aunque esto puede darse debido a que al momento de ejecutar esta gráfica teórica toma siempre el peor escenario, y este es poco probable dando como resultado un número de comparaciones más alto que el promedio.
+Haciendo un análisis a la gráfica podemos observar que el número de comparaciones mostradas reales son menores que las teóricas, aunque esto puede darse debido a que al momento de ejecutar esta gráfica teórica toma siempre el peor escenario, y este es poco probable dando como resultado un número de comparaciones más alto que el promedio.
 
 ![m6](/img/m6.jpg )
-Si repetimos la prueba con 20 muestras por numero de datos **n** a organizar vemos como los datos tienden a un comportamiento similar a el de la gráfica teórica pero por debajo de esta.
+Si repetimos la prueba con 20 muestras por número de datos **n** a organizar vemos como los datos tienden a un comportamiento similar al de la gráfica teórica pero por debajo de esta.
 
 ![m7](/img/m7.jpg )
 
-Donde se puede concluir que el valor teórico es más alto que el valor real debido a que toma el mayor número de comparaciones posibles al promedio que generalmente se genera, es decir, que el valor teórico actua como una cota superior para las ejecuciones en la implementación dada.
+Donde se puede concluir que el valor teórico es más alto que el valor real debido a que toma el mayor número de comparaciones posibles al promedio que generalmente se genera, es decir, que el valor teórico actúa como una cota superior para las ejecuciones en la implementación dada.
