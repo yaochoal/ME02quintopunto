@@ -58,14 +58,13 @@ Google Colab es un servicio en la nube que permite hacer uso de las GPUs y TPUs 
 
 
 ## 3. Análisis de resultados.
-Las implementaciones de QuickSort varían dependiendo de como se escoja el pivote debido a que la mayoría de optimizaciones que se aplican al algoritmo se centran en la elección del pivote por lo cual la complejidad pueden variar de **O(n²)**. a **O(n·log n)**.
+Las implementaciones de QuickSort varían dependiendo de como se escoja el pivote debido a que la mayoría de optimizaciones que se aplican al algoritmo se centran en la elección del pivote por lo cual la complejidad pueden variar de **O(n²)**(peor caso). a **O(n·log n)**(mejor caso y caso promedio).
 
-Haciendo un análisis a la gráfica podemos observar que el numero de comparaciones mostradas reales son menores que las teóricas, aunque esto puede darse debido a que al momento de ejecutar esta gráfica teórica toma un escenario poco probable donde el numero de comparaciones es mas alto que el promedio.
+Haciendo un análisis a la gráfica podemos observar que el numero de comparaciones mostradas reales son menores que las teóricas, aunque esto puede darse debido a que al momento de ejecutar esta gráfica teórica toma siempre el peor escenario, y este es poco probable dando como resultado un número de comparaciones más alto que el promedio.
 
 ![m6](/img/m6.jpg )
-
-Si repetimos la prueba con 20 muestras por numero de datos **n** a organizar vemos como los datos tienden a tener un comportamiento similar a el de la gráfica teórica pero por debajo de esta.
+Si repetimos la prueba con 20 muestras por numero de datos **n** a organizar vemos como los datos tienden a un comportamiento similar a el de la gráfica teórica pero por debajo de esta.
 
 ![m7](/img/m7.jpg )
 
-Donde se puede concluir que el valor teórico es mas alto que el valor real debido a que toma el mayor numero de comparaciones posibles al promedio que generalmente se genera.
+Donde se puede concluir que el valor teórico es más alto que el valor real debido a que toma el mayor número de comparaciones posibles al promedio que generalmente se genera, es decir, que el valor teórico actua como una cota superior para las ejecuciones en la implementación dada.
