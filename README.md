@@ -104,18 +104,32 @@ Google Colab es un servicio en la nube que permite hacer uso de las GPUs y TPUs 
 - Para correr el código primero debemos dar clic en el siguiente enlace.
 ### [ Código fuente en Colab](https://colab.research.google.com/drive/1-onef1pg1dCJ-EcmNn9h3BNJ6pqV_Ynm)
 - Luego dar clic en la opción de arriba izquierda **Abrir en modo ensayo**.
+
 ![m1](/img/m1.jpg )
+
 - Una vez ahí dar clic en el botón de **Play** de arriba izquierda.
+
 ![m2](/img/m2.jpg )
+
 - Confirmar ejecución.
+
 ![m3](/img/m3.jpg )
+
+
 - Ingrese los **n** datos a ordenar.
+
 ![m4](/img/m4.jpg )
+
 - Ingrese el numero de muestras por **n** datos.
+
 ![m5](/img/m5.jpg )
+
 - Espere a que termine de ejecutar y visualice la gráfica con los datos.
+
 ![m6](/img/m6.jpg )
+
 
 ## 3. Análisis de resultados.
 
 Haciendo un análisis a la gráfica podemos observar que el numero de comparaciones mostradas por los valores reales en comparación con las teóricas en la mayoría de casos dan por debajo de esta linea .
+
